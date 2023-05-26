@@ -34,8 +34,7 @@ jobs:
 
       - name: Echo Environment
         run: | 
-          echo $(ls ~/.aws)
-          echo $(ls ~/.kube)
+          echo $(kubectl get nodes)
   
       # - name: Apply aws-auth
       #   run: |
