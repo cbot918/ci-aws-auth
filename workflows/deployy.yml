@@ -1,20 +1,19 @@
-# name: Run Deploy
+name: Run Deploy
 
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
+on:
+  push:
+    branches: [ main ]
 
-# jobs:
 
-#   deploy:
-#     name: Build image
-#     runs-on: ubuntu-latest
+jobs:
 
-#     steps:
-#       - name: Check out code
-#         uses: actions/checkout@v3
+  deploy:
+    name: Build image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
 
 #       - name: Install kubectl
 #         uses: azure/setup-kubectl@v3
