@@ -37,9 +37,11 @@ jobs:
           echo $(ls ~/.aws)
           echo $(ls ~/.kube)
 
-#       - name: Apply aws-auth
-#         run: |
-#           kubectl apply -f eks/aws-auth.yaml
+
+  
+      - name: Apply aws-auth
+        run: |
+          kubectl apply -f eks/aws-auth.yaml
       
 #       # - name: Configure AWS credentials
 #       #   uses: aws-actions/configure-aws-credentials@v1
