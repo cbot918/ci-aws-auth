@@ -15,19 +15,22 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-#       - name: Install kubectl
-#         uses: azure/setup-kubectl@v3
-#         with:
-#           version: 'v1.21.3' # default is latest stable
-#         id: install
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.21.3' # default is latest stable
+        id: install
 
-#       - name: Configure AWS credentials
-#         uses: aws-actions/configure-aws-credentials@v1
-#         with:
-#           # role-to-assume: arn:aws:iam::123456789012:role/my-github-actions-role
-#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#           aws-region: us-east-1
+      - name: Echo kubectl
+        run: echo $(which kubectl)
+
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     # role-to-assume: arn:aws:iam::123456789012:role/my-github-actions-role
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-east-1
 
 #       - name: Apply aws-auth
 #         run: |
